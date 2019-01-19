@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZEExFndLA1ypYe0LBkdGBYMlUk-2CEEI&sensor=false">
+    </script>
+    <script type="text/javascript">
+
+      var map;
+      var alg1 = '/home/pawel/IdeaProjects/Rowery1/src/map-marker-2-32.png'
+      var tabu = '/home/pawel/IdeaProjects/Rowery1/src/icons8-marker-filled-32.png'
+      var rand = '/home/pawel/IdeaProjects/Rowery1/src/if_Map-Marker-Marker-Inside-Azure_73048.png'
+
+      function initialize() {
+        var mapOptions = {
+            center: new google.maps.LatLng(51.104375, 17.048229),
+            zoom: 15
+        };
+
+        var bikeLayer = new google.maps.BicyclingLayer();
+        bikeLayer.setMap(map);
+
+        map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+
+        var bikeLayer = new google.maps.BicyclingLayer();
+        bikeLayer.setMap(map);
+
+
+
+}
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+<div id="map-canvas"/>
+</body>
+</html>
